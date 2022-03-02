@@ -1,17 +1,23 @@
 
 
-
-<div class="container">
-  <div class="row justify-content-center gy-3">
-  <div>
   <h1>Check Out Our Best Experiences!</h1>
+<div class="index-left-map-right">
+<div class="container experienxes">
+  <div class="row gy-3">
+  <div>
 </div>
     <% @experiences.each do |experience| %>
-      <div class="col col-3 card gap-3">
+      <div class="col col-12 card gap-3">
         <%= cl_image_tag experience.photo.key, height: 150, width: 200, crop: :fill %>
         <h3><%= experience.address %></h3>
         <h3><%= experience.event_type %></h3>
     </div>
   <% end %>
   </div>
+</div>
+
+<div class="map-right" style="width: 100%"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
