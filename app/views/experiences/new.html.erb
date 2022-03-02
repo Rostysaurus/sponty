@@ -1,0 +1,13 @@
+
+<div class="container-fluid">
+  <div class="row justify-content-md-center gap-3">
+      <div class="col col-6 card">
+        <%= simple_form_for [@experience] do |f| %>
+          <%= f.input :name %>
+          <%= f.input :address %>
+          <%= f.input :event_type %>
+          <%= f.submit %>
+        <% end %>
+    </div>
+  </div>
+</div>
