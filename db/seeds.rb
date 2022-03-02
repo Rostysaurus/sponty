@@ -16,32 +16,28 @@ User.destroy_all
 puts 'Creating 4 fake users...'
   user1 = User.new(
     email: 'ipek@email.com',
-    password: '123456',
-    name: 'Ipek'
+    password: '123456'
     )
   user1.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/users/1.png")), filename: "1")
   user1.save!
 
   user2 = User.new(
     email: 'rosty@email.com',
-    password: '123456',
-    name: 'Rosty'
+    password: '123456'
     )
   user2.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/users/2.png")), filename: "2")
   user2.save!
 
   user3 = User.new(
     email: 'kinga@email.com',
-    password: '123456',
-    name: 'Kinga'
+    password: '123456'
     )
   user3.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/users/3.png")), filename: "3")
   user3.save!
 
   user4 = User.new(
-    email: 'viktor@email.com'
-    password: '123456',
-    name: 'Viktor'
+    email: 'viktor@email.com',
+    password: '123456'
     )
   user4.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/users/4.png")), filename: "4")
   user4.save!
@@ -56,22 +52,22 @@ user2.save!
 user3.save!
 user4.save!
 
-puts 'Creating 20 experiences...'
+puts 'Creating 10 experiences...'
 count2 = 0
-20.times do
-  if count2 <= 20
+10.times do
+  if count2 <= 10
     count2 += 1
     experience = Experience.new(
       name:    Faker::Restaurant.name,
       address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
-      busyness:,
-      type: Restaurant.type
+      event_type: Faker::Restaurant.type,
+      busyness: "busy"
     )
-    experience.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/#{count2}.png")), filename: "#{count2}")
+    experience.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/#{count2}.jpeg")), filename: "#{count2}")
     experience.user = user1
     experience.save!
     count2 += 1
-  elsif count2 > 20
+  elsif count2 > 10
     count2 = 0
   end
 end
