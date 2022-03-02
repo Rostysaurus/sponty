@@ -5,6 +5,16 @@
   <div class="row justify-content-center gy-3">
   <div>
   <h1>Check Out Our Best Experiences!</h1>
+
+<%= form_tag experiences_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an experience"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 </div>
     <% @experiences.each do |experience| %>
       <div class="col col-3 card gap-3">
