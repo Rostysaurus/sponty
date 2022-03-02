@@ -1,7 +1,11 @@
 class ExperiencesController < ApplicationController
 
-def new
-  @experience = Experience.new
-end
+  def new
+    @experience = Experience.new
+  end
 
-end
+    def show
+      @experience = Experience.find(params[:id])
+    end
+
+  end
