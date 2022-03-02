@@ -15,7 +15,7 @@ end
 def create
   @experience = Experience.new(experience_params)
   @experience.save
-  redirect_to experience_path
+  redirect_to new_experience_path
 end
 
 private
