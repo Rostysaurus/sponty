@@ -1,0 +1,8 @@
+<div class = "container">
+  <div class = "show-banner" style="background-image:linear gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @experience.photo.key, height: 150, width: 200, crop: :fill %>')">
+    <div class = "show-banner-content">
+      <h1><%= @experience.name %> </h1>
+      <h2> <%= @experience.address%> </h2>
+    </div>
+  </div>
+</div>
