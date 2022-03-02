@@ -1,6 +1,5 @@
 class ExperiencesController < ApplicationController
 
-
 def index
   @experiences = Experience.all
 
@@ -14,12 +13,23 @@ def index
   end
 end
 
+def show
+  @experience = Experience.find(params[:id])
+end
+
 def new
   @experience = Experience.new
 end
 
-def show
-  @experience = Experience.find(params[:id])
+def create
+  @experience = Experience.new(experience_params)
+  @experience.save
+  redirect_to new_experience_path
+end
+
+private
+def experience_params
+  params.require(:experience).permit(:name, :address, :busyness, :event_type)
 end
 
 end
