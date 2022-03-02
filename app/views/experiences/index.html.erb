@@ -1,0 +1,17 @@
+
+
+
+<div class="container">
+  <div class="row justify-content-center gy-3">
+  <div>
+  <h1>Check Out Our Best Experiences!</h1>
+</div>
+    <% @experiences.each do |experience| %>
+      <div class="col col-3 card gap-3">
+        <%= cl_image_tag experience.photo.key, height: 150, width: 200, crop: :fill %>
+        <h3><%= experience.address %></h3>
+        <h3><%= experience.event_type %></h3>
+    </div>
+  <% end %>
+  </div>
+</div>
