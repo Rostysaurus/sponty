@@ -5,6 +5,10 @@ class ExperiencesController < ApplicationController
     redirect_to experience_path
   end
 
+  def show
+    @experience = Experience.find(params[:id])
+  end
+
   private
   def experience_params
     params.require(:experience).permit(:name, :address, :busyness, :event_type)
