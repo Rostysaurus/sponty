@@ -4,9 +4,11 @@
       <div class="col col-6 card">
         <%= simple_form_for [@experience] do |f| %>
           <%= f.input :name %>
-          <%= f.input :address %>
           <%= f.input :event_type %>
-          <%= f.submit %>
+          <%= f.input :address,
+              input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+          <%= f.submit class: "btn btn-primary"%>
         <% end %>
     </div>
   </div>

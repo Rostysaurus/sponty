@@ -59,7 +59,7 @@ count2 = 0
     count2 += 1
     experience = Experience.new(
       name:    Faker::Restaurant.name,
-      address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+      address: "Rudi-Dutschke-Straße 2#{count2}, 10969 Berlin",
       event_type: Faker::Restaurant.type,
       busyness: "busy"
     )
