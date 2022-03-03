@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :chatrooms, only: [:show] do
       resources :messages, only: :create
     end
+    resources :experience_users, only: [:create]
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-end
+  resources :experience_users, only: [:index]
+  end
