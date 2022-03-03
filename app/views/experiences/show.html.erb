@@ -1,8 +1,17 @@
 <div class = "container">
-  <div class = "show-banner" style="background-image:linear gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @experience.photo.key, height: 150, width: 200, crop: :fill %>')">
-    <div class = "show-banner-content">
-      <h1><%= @experience.name %> </h1>
-      <h2> <%= @experience.address%> </h2>
+  <div class = "show-banner" style="background-image: url('<%= cl_image_path @experience.photo.key, height: 150, width: 200, crop: :fill %>');">
+    <div class = "icon-container">
+      <i class="fas fa-cocktail" align-items: center></i>
+        <p><%= @experience.event_type %></p>
+      <!--<p><%= @experience.event_type %></p>-->
+    </div>
+      <div class = "show-banner-content">
+        <h1><%= @experience.name %> </h1>
+        <h3> <%= @experience.address%> </h3>
+      </div>
     </div>
   </div>
+
+<div class="btn-home-page">
+  <p class="btn btn-yellow" ><%= link_to "See all experiences", experiences_path%></p>
 </div>

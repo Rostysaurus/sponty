@@ -1,19 +1,49 @@
 .show-banner{
-  background-size: cover;
+  background-size: 1400px;
   background-position: center;
-  padding: 150px 0;
+  background-repeat: no-repeat;
+  //display: flex;
+  //padding: 150px 0;
+  //object-fit: cover;
+  height: 400px;
+  //width: 100%;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .show-banner h1 {
-  margin: 0;
+  margin: 0px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
-
+  text-align: center;
+  padding-top: 100px;
+  font-family: monospace;
+}
 .show-banner h3 {
     font-size: 20px;
     color: white;
     opacity: .7;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-align: center;
+    margin: 15px;
+    font-family: monospace;
+}
+
+.icon-container {
+  height: 60px;
+  width: 60px;
+  background-color: rgb(255, 255, 255);
+  opacity: .7;
+  position: absolute;
+  left: 24px;
+  top: 24px;
+}
+
+.icon-container p {
+  font-size: 12px;
+  font-family: monospace;
 }
