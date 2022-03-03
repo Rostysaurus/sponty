@@ -21,7 +21,8 @@ end
 
 def show
   @experience = Experience.find(params[:id])
-  @chatroom = Chatroom.new
+  @chatroom = @experience.chatroom
+  @message = Message.new
 end
 
 def new
@@ -30,6 +31,8 @@ end
 
 def create
   @experience = Experience.new(experience_params)
+  chatroom = Chatroom.create(name: "#{@experience.name}-chatroom")
+  @experience.chatroom = chatroom
   @experience.save
   redirect_to new_experience_path
 end
