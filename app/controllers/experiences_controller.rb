@@ -13,7 +13,6 @@ end
       lat: experience.latitude,
       lng: experience.longitude,
       info_window: render_to_string(partial: "info_window", locals: { experience: experience }),
-      image_url: 'cl_image_path experience.photo.key'
     }
   end
 

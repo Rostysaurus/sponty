@@ -1,6 +1,7 @@
 .index-left-map-right {
 display: flex;
 margin: 60px 30px 0 30px;
+padding: inherit;
 };
 
 .experienxes {
@@ -18,3 +19,14 @@ margin: 60px 30px 0 30px;
   flex-direction: column;
   justify-content: center;
 };
+
+.search-bar {
+  padding-right: inherit;
+}
+
+.search-bar form{
+  padding: inherit;
+}
+.search-bar input{
+  margin: 20px 0 20px 0;
+}
