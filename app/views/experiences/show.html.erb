@@ -1,19 +1,49 @@
-<div class = "container">
-  <div class = "show-banner" style="background-image: url('<%= cl_image_path @experience.photo.key, height: 150, width: 200, crop: :fill %>');">
+<div class = "show-banner" style="background-image: url('<%= cl_image_path @experience.photo.key, height: 150, width: 200, crop: :fill %>');">
+  <div class = "container" style="height: 100%;">
     <div class = "icon-container">
       <i class="fas fa-cocktail" align-items: center></i>
         <p><%= @experience.event_type %></p>
       <!--<p><%= @experience.event_type %></p>-->
     </div>
-      <div class = "show-banner-content">
-        <h1><%= @experience.name %> </h1>
-        <h3> <%= @experience.address%> </h3>
-      </div>
+    <div class = "show-banner-content">
+      <h1><%= @experience.name %> </h1>
+      <h3> <%= @experience.address%> </h3>
     </div>
   </div>
+</div>
+
+<div class="container chatroom">
+  <h1>#<%= @experience.chatroom.name %></h1>
+
+  <div class="messages">
+    <% @experience.chatroom.messages.each do |message| %>
+      <div id="message-<%= message.id %>">
+        <small>
+          <strong><%= message.user.nickname %></strong>
+          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+        </small>
+        <p><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= simple_form_for [@chatroom, @message],
+  remote: true,
+  url: experience_chatroom_messages_path(@experience, @chatroom),
+  method: :post,
+  html: {class: "d-flex"} do |f|
+%>
+  <%= f.input :content,
+    label: false,
+    placeholder: "Message ##{@chatroom.name}",
+    wrapper_html: {class: "flex-grow-1"}
+  %>
+  <%= f.submit "Send", class: "btn btn-primary" %>
+<% end %>
 
 <div class="btn-home-page">
-  <p class="btn btn-yellow" ><%= link_to "See all experiences", experiences_path%></p>
+  <%= link_to "See all experiences", experiences_path, class:"btn btn-yellow"%>
 </div>
 
 <%= button_to "Bookmark", experience_experience_users_path(@experience)%>
