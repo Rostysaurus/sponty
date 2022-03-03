@@ -1,7 +1,7 @@
 class Experience < ApplicationRecord
   belongs_to :user
   has_many :experience_users
-  has_many :experiences, through: :experience_users
+  has_one :chatroom
   has_one_attached :photo
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

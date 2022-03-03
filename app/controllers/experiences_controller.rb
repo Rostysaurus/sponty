@@ -21,6 +21,7 @@ end
 
 def show
   @experience = Experience.find(params[:id])
+  @chatroom = Chatroom.new
 end
 
 def new
