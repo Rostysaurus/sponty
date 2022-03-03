@@ -1,5 +1,22 @@
 
 
+<div class="container">
+  <div class="row justify-content-center gy-3">
+  <div>
+  <h1>Check Out Our Best Experiences!</h1>
+
+<%= form_tag experiences_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an experience"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+</div>
+    
+   
+
 <div class="index-left-map-right">
   <div class="container experienxes">
     <div class="row gy-3">
@@ -22,3 +39,4 @@
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+

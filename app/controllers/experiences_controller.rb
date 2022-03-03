@@ -1,7 +1,12 @@
 class ExperiencesController < ApplicationController
 
 def index
-  @experiences = Experience.all
+
+if params[:query].present?
+   @experiences = Experience.search_by_name_and_address_and_event_type(params[:query])
+ else
+   @experiences = Experience.all
+end
 
   @markers = @experiences.geocoded.map do |experience|
     {
@@ -11,6 +16,7 @@ def index
       image_url: 'cl_image_path experience.photo.key'
     }
   end
+
 end
 
 def show
@@ -28,8 +34,8 @@ def create
 end
 
 private
+
 def experience_params
   params.require(:experience).permit(:name, :address, :busyness, :event_type)
 end
-
 end

@@ -9,4 +9,11 @@ class Experience < ApplicationRecord
   validates :name, :address, :event_type, presence: true
   validates :busyness, inclusion: { in: %w(busy semi-busy empty),
   message: "%{value} is not a valid busyness" }
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_address_and_event_type,
+    against: [ :name, :address, :event_type ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
