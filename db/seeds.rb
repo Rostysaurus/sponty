@@ -13,6 +13,7 @@ puts "Cleaning database of experiences ..."
 Experience.destroy_all
 User.destroy_all
 
+
 puts 'Creating 4 fake users...'
   user1 = User.new(
     email: 'ipek@email.com',
@@ -64,7 +65,10 @@ count2 = 0
       busyness: "busy"
     )
     experience.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/#{count2}.jpeg")), filename: "#{count2}")
+
     experience.user = user1
+    chatroom = Chatroom.create(name: "#{experience.name}-chatroom")
+    experience.chatroom = chatroom
     experience.save!
     count2 += 1
   elsif count2 > 10
