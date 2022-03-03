@@ -1,6 +1,6 @@
 class Experience < ApplicationRecord
   belongs_to :user
-  has_many :experience_users
+  has_many :experience_users, dependent: :destroy
   has_one :chatroom, dependent: :destroy
   has_one_attached :photo
   geocoded_by :address
