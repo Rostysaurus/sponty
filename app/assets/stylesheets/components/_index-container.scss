@@ -1,0 +1,20 @@
+.index-left-map-right {
+display: flex;
+margin: 60px 30px 0 30px;
+};
+
+.experienxes {
+  flex-grow: 1;
+  align-items: center;
+};
+
+.experience-card {
+  border: none;
+  display: flex;
+};
+
+.experience-name-and-address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+};
