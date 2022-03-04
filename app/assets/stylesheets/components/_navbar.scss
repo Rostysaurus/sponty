@@ -1,8 +1,14 @@
+.navbar-wagon-link {
+  font-size: 40px;
+}
+
 .navbar-lewagon {
+  color:black;
+  font-weight: bold;
+  font-size: 18px;
   justify-content: space-between;
   background: transparent;
   display: flex;
-  padding: 20px 80px;
   align-items: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06)l
 }

@@ -1,4 +1,5 @@
 class ExperiencesController < ApplicationController
+  before_action :experience_users_all, only: [:show]
 
 def index
 
@@ -37,6 +38,10 @@ def create
 end
 
 private
+
+def experience_users_all
+  @experience_users = ExperienceUser.all
+end
 
 def experience_params
   params.require(:experience).permit(:name, :address, :busyness, :event_type)

@@ -1,1 +1,111 @@
 // Specific CSS for your home-page
+
+
+.home-container {
+  display: flex;
+  margin-top: 120px;
+  margin-left: 10px;
+  justify-content: space-between;
+  height: 40vh;
+  align-items: center;
+}
+
+
+.image img {
+  margin: auto;
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  top: 100px;
+  left: 800px;
+  margin-top: 10px;
+}
+
+
+
+
+.banner-content h1 {
+  text-shadow: 0px 1px rgba(0,0,0,0.2);
+  font-size: 138px;
+  font-weight: bold;
+  color: #F45B69;
+  letter-spacing: 0.2px;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.banner-content p {
+  font-size: 20px;
+  color: black;
+  opacity: 20;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 600px;
+}
+
+.box-label {
+  position: absolute;
+  right: 0;
+  width: 750px;
+  height: 30px;
+  line-height: 40px;
+  border-radius: 50%;
+  box-shadow: -5px -5px 8px #dcdcdd,
+  5px 5px 10px;
+}
+
+.form-control {
+  width: 550px;
+  height: 60px;
+  border: none;
+  background-color: transparent;
+  border-radius: 30px;
+  outline: none;
+  font-size: 18px;
+  padding-left: 18px;
+  color: black;
+  margin-top: 10px;
+  box-shadow: -8px -8px 12px #edeff1,
+  8px 8px 12px #cacfd8;
+  transition: .5s;
+}
+
+.form-control:focus {
+  box-shadow: -8px -8px 20px #edeff1,
+  8px 8px 20px #cacfd8;
+}
+
+
+.experiences {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    margin-top: 450px;
+}
+
+.experiences h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: black;
+  letter-spacing: 0.1px;
+}
+
+.experiences p{
+  color: black;
+  font-size: 19px;
+  margin-top: 10px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+
+}

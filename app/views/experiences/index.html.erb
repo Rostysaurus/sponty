@@ -1,18 +1,16 @@
-
-
 <div class="container">
   <div class="row justify-content-center gy-3">
     <div class="search-bar">
-      <%= form_tag experiences_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find an experience"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
-    </div>
 
+
+<%= form_tag experiences_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search for the venue or address"
+   %>
+<% end %>
+</div>
 
 
 <div class="index-left-map-right">
@@ -25,7 +23,7 @@
             <div class="experience-name-and-address">
             <h2><%= experience.name %></h2>
             <p><%= experience.event_type %></p>
-            <p><%= experience.address %></p>
+            <p class="text-red"><%= "Connect with guests!" %></p>
             </div>
           </div>
         <% end %>

@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     end
     resources :experience_users, only: [:create]
   end
-  resources :experience_users, only: [:index]
+  resources :experience_users, only: [:index, :destroy]
   end
