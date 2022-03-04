@@ -3,7 +3,7 @@ class ExperienceUsersController < ApplicationController
   before_action :find_experience_user, only: [:destroy]
 
   def index
-    @experience_users = ExperienceUser.all
+    @experience_users = ExperienceUser.where(user: current_user)
   end
 
   def new
