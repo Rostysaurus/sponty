@@ -1,7 +1,16 @@
 <div class="container">
   <div class="row justify-content-center gy-3">
-  <div>
-  <h1>Check Out Our Best Experiences!</h1>
+    <div class="search-bar">
+      <%= form_tag experiences_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find an experience"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
 
 <%= form_tag experiences_path, method: :get do %>
   <%= text_field_tag :query,
@@ -13,19 +22,20 @@
 </div>
 
 
-
 <div class="index-left-map-right">
   <div class="container experienxes">
     <div class="row gy-3">
       <% @experiences.each do |experience| %>
-        <div class="col col-12 gap-3 experience-card">
-          <%= cl_image_tag experience.photo.key, height: 150, width: 200, crop: :fill%>
-          <div class="experience-name-and-address">
-          <h2><%= experience.name %></h2>
-          <p><%= experience.event_type %></p>
-          <p><%= experience.address %></p>
+        <%= link_to experience_path(experience) do%>
+          <div class="col col-12 gap-3 experience-card">
+            <%= cl_image_tag experience.photo.key, height: 150, width: 200, crop: :fill%>
+            <div class="experience-name-and-address">
+            <h2><%= experience.name %></h2>
+            <p><%= experience.event_type %></p>
+            <p><%= experience.address %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
