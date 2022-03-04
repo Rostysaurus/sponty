@@ -1,4 +1,5 @@
 class ExperiencesController < ApplicationController
+  before_action :experience_users_all, only: [:show]
 
 def index
 
@@ -13,7 +14,6 @@ end
       lat: experience.latitude,
       lng: experience.longitude,
       info_window: render_to_string(partial: "info_window", locals: { experience: experience }),
-      image_url: 'cl_image_path experience.photo.key'
     }
   end
 
@@ -21,6 +21,8 @@ end
 
 def show
   @experience = Experience.find(params[:id])
+  @chatroom = @experience.chatroom
+  @message = Message.new
 end
 
 def new
@@ -29,11 +31,17 @@ end
 
 def create
   @experience = Experience.new(experience_params)
+  chatroom = Chatroom.create(name: "#{@experience.name}-chatroom")
+  @experience.chatroom = chatroom
   @experience.save
   redirect_to new_experience_path
 end
 
 private
+
+def experience_users_all
+  @experience_users = ExperienceUser.all
+end
 
 def experience_params
   params.require(:experience).permit(:name, :address, :busyness, :event_type)
