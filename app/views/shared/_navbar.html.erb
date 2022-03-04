@@ -12,24 +12,23 @@
 
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-main">
         <% if user_signed_in? %>
-          <li class="nav-item active">
+          <li class="nav-item active" class="active">
             <%= link_to "Home", root_path , class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" class="active">
             <%= link_to "About", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Profile", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
-          <li class="nav-item" >
+          <li class="nav-item" class="active" >
              <%= link_to "Home", root_path,  class: "nav-link" %>
           </li>
            <li class="nav-item" >

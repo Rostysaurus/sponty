@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #E3E6F3;
+  background: transparent;
   display: flex;
   padding: 20px 80px;
   align-items: center;
@@ -15,8 +15,27 @@
   width: 40px;
 }
 
-.navbar-nav {
+.navbar-main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.navbar-main li{
+  list-style: none;
+  padding: 0 14px;
+  position: relative;
+}
+
+.navbar-main li a{
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: 0.3s ease;
+}
+
+.navbar-main li a:hover{
+  color: #F45B69;
+  font-weight: bold;
 }
