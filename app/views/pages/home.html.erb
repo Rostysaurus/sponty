@@ -1,11 +1,69 @@
-<h1>Sponty</h1>
-<p>Be spontaneous but stay organized!</p>
 
-<%= form_tag experiences_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find the experience"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+ <div class="home-container">
+  <div class="banner-content">
+  <div class="col-xs-12 col-sm-8 offset-sm-2">
+  <br>
+
+
+    <h1>Sponty</h1>
+    <br>
+    <p>Be spontaneous but stay organized!</p>
+    <br>
+
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1585664811087-47f65abbad64?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" width="750" height="900">
+    </div>
+
+
+  	 <div type="box">
+   <%= form_tag experiences_path, method: :get do %>
+   <%= text_field_tag :query,
+     params[:query],
+     class: "form-control",
+     placeholder: "Search for the venue or address"
+     %>
+   <% end %>
+    </div>
+
+
+
+
+ </div>
+ </div>
+</div>
+
+
+
+<section class="experiences">
+  <h1>Browse popular experiences</h1>
+  <p>Discover new places near you, anytime, without waiting!</p>
+</section>
+
+
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://res.cloudinary.com/dgit1m4j3/image/upload/c_fill,h_150,w_200/v1/development/efvg8x7n5pya8et0aoi1ss5whadu)">
+    Belly Spoon
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://res.cloudinary.com/dgit1m4j3/image/upload/c_fill,h_150,w_200/v1/development/zomur3kznr4m75q3y3xtt3dgjsbj)">
+    Sugar Creamery
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://res.cloudinary.com/dgit1m4j3/image/upload/c_fill,h_150,w_200/v1/development/7910k277vnxmgdb1iesrondvqvdw)">
+    Orange Box
+  </div>
+</div>
+
+ <br>
+
+
+<section class="footer">
+  <h3> About Us </h3>
+  <p>Sponty is a first real-time experience sharing platform.</p>
+  <div class="icons">
+    <i class="fa fa-facebook"></i>
+    <i class="fa fa-twitter"></i>
+    <i class="fa fa-instagram"></i>
+  </div>
+  <p>Made with <i class="fas fa-heart"></i> by Sponty team</p>
+  </div>
