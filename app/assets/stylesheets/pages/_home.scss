@@ -3,8 +3,8 @@
 
 .home-container {
   display: flex;
-  margin-top: 80px;
-  margin-left: 50px;
+  margin-top: 120px;
+  margin-left: 10px;
   justify-content: space-between;
   height: 40vh;
   align-items: center;
@@ -17,7 +17,7 @@
   position: absolute;
   justify-content: space-between;
   top: 100px;
-  left: 1100px;
+  left: 800px;
   margin-top: 10px;
 }
 
@@ -26,21 +26,21 @@
 
 .banner-content h1 {
   text-shadow: 0px 1px rgba(0,0,0,0.2);
-  font-size: 190px;
+  font-size: 138px;
   font-weight: bold;
   color: #F45B69;
   letter-spacing: 0.2px;
   margin: 0;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .banner-content p {
-  font-size: 30px;
+  font-size: 20px;
   color: black;
-  opacity: 10;
+  opacity: 20;
   font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 }
 
 .box {
@@ -64,24 +64,24 @@
 }
 
 .form-control {
-  width: 800px;
-  height: 80px;
+  width: 550px;
+  height: 60px;
   border: none;
   background-color: transparent;
   border-radius: 30px;
   outline: none;
-  font-size: 19px;
-  padding-left: 20px;
+  font-size: 18px;
+  padding-left: 18px;
   color: black;
-  margin-top: 45px;
-  box-shadow: -10px -10px 15px #edeff1,
-  10px 10px 15px #cacfd8;
+  margin-top: 10px;
+  box-shadow: -8px -8px 12px #edeff1,
+  8px 8px 12px #cacfd8;
   transition: .5s;
 }
 
 .form-control:focus {
-  box-shadow: -10px -10px 40px #edeff1,
-  10px 10px 40px #cacfd8;
+  box-shadow: -8px -8px 20px #edeff1,
+  8px 8px 20px #cacfd8;
 }
 
 
@@ -89,12 +89,12 @@
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 100px;
-    margin-top: 500px;
+    padding-top: 50px;
+    margin-top: 450px;
 }
 
 .experiences h1 {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 600;
   color: black;
   letter-spacing: 0.1px;
@@ -102,7 +102,7 @@
 
 .experiences p{
   color: black;
-  font-size: 25px;
+  font-size: 19px;
   margin-top: 10px;
   font-weight: 300;
   line-height: 22px;
