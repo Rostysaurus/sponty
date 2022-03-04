@@ -26,7 +26,7 @@
 
 .banner-content h1 {
   text-shadow: 0px 1px rgba(0,0,0,0.2);
-  font-size: 180px;
+  font-size: 190px;
   font-weight: bold;
   color: #F45B69;
   letter-spacing: 0.2px;
@@ -35,9 +35,10 @@
 }
 
 .banner-content p {
-  font-size: 25px;
+  font-size: 30px;
   color: black;
-  opacity: 2;
+  opacity: 10;
+  font-weight: bold;
   margin-top: 10px;
   margin-bottom: 15px;
 }
@@ -63,15 +64,15 @@
 }
 
 .form-control {
-  width: 750px;
-  height: 70px;
+  width: 800px;
+  height: 80px;
   border: none;
   background-color: transparent;
   border-radius: 30px;
   outline: none;
   font-size: 19px;
   padding-left: 20px;
-  color: gray;
+  color: black;
   margin-top: 45px;
   box-shadow: -10px -10px 15px #edeff1,
   10px 10px 15px #cacfd8;
@@ -100,9 +101,11 @@
 }
 
 .experiences p{
-  font-size: 20px;
+  color: black;
+  font-size: 25px;
   margin-top: 10px;
   font-weight: 300;
   line-height: 22px;
   padding: 10px;
+
 }
