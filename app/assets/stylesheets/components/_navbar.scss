@@ -11,9 +11,41 @@
   font-weight: bold;
   font-size: 18px;
   justify-content: space-between;
-  background: white;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06)l
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.navbar-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-main li{
+  list-style: none;
+  padding: 0 14px;
+  position: relative;
+}
+
+.navbar-main li a{
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: 0.3s ease;
+}
+
+.navbar-main li a:hover{
+  color: #F45B69;
+  font-weight: bold;
 }
