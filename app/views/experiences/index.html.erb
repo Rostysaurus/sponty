@@ -1,5 +1,3 @@
-
-
 <div class="container">
   <div class="row justify-content-center gy-3">
   <div>
@@ -10,12 +8,11 @@
     params[:query],
     class: "form-control",
     placeholder: "Find an experience"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+   %>
 <% end %>
 </div>
-    
-   
+
+
 
 <div class="index-left-map-right">
   <div class="container experienxes">
@@ -39,4 +36,3 @@
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-
