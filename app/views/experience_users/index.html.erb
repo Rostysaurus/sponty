@@ -1,29 +1,26 @@
-<% if @experience_users %>
-<%= "Hey I exist" %>
-<% else %>
-<%= "Sorry no experiences" %>
-<%= link_to "Find one now!", experiences_path%>
-<% end %>
-
+<% if @experience_users.exists? %>
 <div class="index-left-map-right">
   <div class="container experienxes">
     <div class="row gy-3">
-    <% if @experience_users %>
       <% @experience_users.each do |experience| %>
-        <%= link_to experience_path(experience) do%>
+        <%= link_to experience_path(experience.experience) do%>
           <div class="col col-12 gap-3 experience-card">
             <%= cl_image_tag experience.experience.photo.key, height: 150, width: 200, crop: :fill%>
             <div class="experience-name-and-address">
             <h2><%= experience.experience.name %></h2>
             <p><%= experience.experience.event_type %></p>
             <p><%= experience.experience.address %></p>
+            <p><%= link_to "Delete", experience_user_path(experience),  method: :delete,
+            data: { confirm: "Are you sure?" } %></p>
             </div>
           </div>
         <% end %>
       <% end %>
-      <% else %>
-        <%= "Sorry no experiences" %>
-        <%= link_to "Find one now!", experiences_path%>
-      <% end %>
     </div>
   </div>
+  <% else %>
+  <div class="sad text-center">
+  <p><%= "No favourites yet 😿" %></p>
+  <p><%= link_to "Find one now!", experiences_path %></p>
+  </div>
+<% end %>
