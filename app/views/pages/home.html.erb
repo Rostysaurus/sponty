@@ -36,7 +36,7 @@
 </section>
 
 
-<div class="cards">
+<%# <div class="cards">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://res.cloudinary.com/dgit1m4j3/image/upload/c_fill,h_150,w_200/v1/development/efvg8x7n5pya8et0aoi1ss5whadu)">
     Belly Spoon
   </div>
@@ -48,7 +48,22 @@
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://res.cloudinary.com/dgit1m4j3/image/upload/c_fill,h_150,w_200/v1/development/7910k277vnxmgdb1iesrondvqvdw)">
     Orange Box
   </div>
-</div>
+</div> %>
+
+
+
+
+          <div class="cards">
+      <% @experiences.each do |experience| %>
+        <%= link_to experience_path(experience) do%>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path experience.photo.key, height: 150, width: 200, crop: :fill%>')">
+            <h2><%= experience.name %></h2>
+              </div>
+        <% end %>
+      <% end %>
+         </div>
+
+
 
  <br>
 
