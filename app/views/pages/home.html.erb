@@ -16,7 +16,7 @@
 
 
   	 <div type="box">
-   <%= form_tag experiences_path, method: :get do %>
+   <%= form_tag experiences_path, method: :get, autocomplete: "off" do %>
    <%= text_field_tag :query,
      params[:query],
      class: "form-control",
