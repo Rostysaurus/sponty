@@ -15,10 +15,11 @@
     </div>
 
 
-  	 <div type="box">
-   <%= form_tag experiences_path, method: :get, autocomplete: "off" do %>
+  	 <div type="box" data-controller="search-experiences">
+   <%= form_tag experiences_path, method: :get, data: { search_experiences_target: 'form' }, autocomplete: "off" do %>
    <%= text_field_tag :query,
      params[:query],
+     data: { search_experiences_target: 'input', action: 'keyup->search-experiences#update' },
      class: "form-control",
      placeholder: "Search for the venue or address"
      %>
