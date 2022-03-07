@@ -9,6 +9,11 @@ if params[:query].present?
    @experiences = Experience.all
 end
 
+respond_to do |format|
+  format.html # Follow regular flow of Rails
+  format.text { render partial: 'experiences/index', locals: { experiences: @experiences }, formats: [:html] }
+end
+
   @markers = @experiences.geocoded.map do |experience|
     {
       lat: experience.latitude,
