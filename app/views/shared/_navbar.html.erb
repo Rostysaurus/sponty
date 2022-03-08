@@ -20,9 +20,6 @@
           <li class="nav-item">
           <%= link_to "Favourites", experience_users_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "About", "#", class: "nav-link" %>
-          </li>
            <li class="nav-item" >
              <%= link_to "Create experience", new_experience_path,  class: "nav-link" %>
           </li>
@@ -30,7 +27,7 @@
           <li class="nav-item dropdown">
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Profile", "#", class: "dropdown-item" %>
+              <%= link_to "Profile", profile_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>

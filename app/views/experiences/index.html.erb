@@ -14,12 +14,14 @@
 
 
 <div class="index-left-map-right">
-  <div class="container experienxes">
+  <div class="container experiences">
     <div class="row gy-3">
       <% @experiences.each do |experience| %>
         <%= link_to experience_path(experience) do%>
           <div class="col col-12 gap-3 experience-card">
+           <% if experience.photo.attached? %>
             <%= cl_image_tag experience.photo.key, height: 150, width: 200, crop: :fill%>
+            <% end%>
             <div class="experience-name-and-address">
             <h2><%= experience.name %></h2>
             <p><%= experience.event_type %></p>

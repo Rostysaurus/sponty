@@ -1,5 +1,6 @@
 
-
+ <% if experience.photo.attached? %>
 <%= cl_image_tag experience.photo.key, crop: :fill %>
+<% end %>
 <h2><%= experience.name %></h2>
 <p><%= experience.address %></p>
