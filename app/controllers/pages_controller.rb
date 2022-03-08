@@ -8,6 +8,6 @@ class PagesController < ApplicationController
   def profile
     @experience_users = ExperienceUser.where(user: current_user)
     @experiences = Experience.where(user: current_user)
-    @message_count = Message.where(user: current_user).lenght
+    #@message_count = Message.where(user: current_user).lenght
   end
 end
