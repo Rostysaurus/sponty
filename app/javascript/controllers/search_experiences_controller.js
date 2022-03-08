@@ -9,13 +9,19 @@ export default class extends Controller {
     // console.log(this.inputTarget)
   }
   update() {
-    const url = `${this.formTarget.action}?query=${this.inputTarget.value}`
-    fetch(url, { headers: { "Accept": "text/plain" } })
-      .then(response => response.text())
-      .then((data) => {
-        console.log(data);
-        //this.listTarget.insertAdjacentHTML('beforeend', data);
-        this.listTarget.outerHTML = data;
-      })
+    const input = this.inputTarget.value
+    if (this.inputTarget.value !== "") {
+      console.log(this.inputTarget.value)
+      const url = `${this.formTarget.action}?query=${this.inputTarget.value}`
+      // console.log(this.inputTarget.value)
+      fetch(url, { headers: { "Accept": "text/plain" } })
+        .then(response => response.text())
+        .then((data) => {
+          console.log(data);
+          this.listTarget.innerHTML = data;
+        })
+    } else {
+      this.listTarget.innerHTML = ""
+    }
   }
 }

@@ -15,14 +15,15 @@
     </div>
 
 
-  	 <div type="box" data-controller="search-experiences">
-      <%= form_tag root_path, method: :get, data: { search_experiences_target: 'form' }, autocomplete: "off" do %>
+  	 <div id="searchbar" type="box" data-controller="search-experiences">
+      <%= form_tag root_path, method: :get, data: { search_experiences_target: 'form' }, autocomplete: "off", class: "search-input" do %>
         <%= text_field_tag :query,
         params[:query],
         data: { search_experiences_target: 'input', action: 'keyup->search-experiences#update' },
         class: "form-control",
         placeholder: "Search for the venue or address"
         %>
+        <i class="fas fa-search"></i>
       <% end %>
       <div data-search-experiences-target="list"></div>
     </div>
