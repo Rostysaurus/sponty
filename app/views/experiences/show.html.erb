@@ -26,7 +26,10 @@
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
 >
   <h1><%= @experience.chatroom.name %></h1>
-
+    <p class="hidden"
+    data-chatroom-subscription-target="current">
+    <%= current_user.email %>
+    </p>
   <div class="messages"
     data-chatroom-subscription-target="messages">
     <% @experience.chatroom.messages.each do |message| %>

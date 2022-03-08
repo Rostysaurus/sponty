@@ -1,17 +1,15 @@
 <% if message.user == current_user %>
-  <div id="message-<%= message.id%>" class="right message-box">
-    <small>
-      <strong><%= message.user.email %></strong>
-      <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-      </small>
-      <p><%= message.content %></p>
-  </div>
+  <% chat_class="right" %>
   <% else %>
-    <div id="message-<%= message.id %>" class="left message-box">
+  <% chat_class = "left" %>
+  <% end %>
+  <div id="message-<%= message.id%>" class="message-box <%= chat_class %>">
     <small>
-      <strong><%= message.user.email %></strong>
+      <strong
+        id = "email"
+        data-chatroom-subscription-target="messager">
+      <%= message.user.email %></strong>
       <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
       </small>
       <p><%= message.content %></p>
   </div>
-<% end %>
