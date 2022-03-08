@@ -32,8 +32,8 @@ export default class extends Controller {
       message = leftData
     }
     this.messagesTarget.insertAdjacentHTML("beforeend", message)
-    this.messagesTarget.scrollTop(0, this.messagesTarget.scrollHeight)
-    this.formTarget.placeholder = "write here"
+    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+
   }
 
   disconnect() {
