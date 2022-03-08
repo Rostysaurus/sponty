@@ -8,7 +8,9 @@
       <strong
         id = "email"
         data-chatroom-subscription-target="messager">
-      <%= message.user.email %></strong>
+      <%= message.user.email %>
+
+      </strong>
       <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
       </small>
       <p><%= message.content %></p>

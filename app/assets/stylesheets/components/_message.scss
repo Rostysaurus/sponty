@@ -69,3 +69,8 @@
   align-self: start;
   background-color: $yellow;
 }
+
+small strong {
+  display: flex;
+  justify-content: space-between;
+}
