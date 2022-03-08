@@ -16,14 +16,15 @@
 
 
   	 <div type="box" data-controller="search-experiences">
-   <%= form_tag experiences_path, method: :get, data: { search_experiences_target: 'form' }, autocomplete: "off" do %>
-   <%= text_field_tag :query,
-     params[:query],
-     data: { search_experiences_target: 'input', action: 'keyup->search-experiences#update' },
-     class: "form-control",
-     placeholder: "Search for the venue or address"
-     %>
-   <% end %>
+      <%= form_tag root_path, method: :get, data: { search_experiences_target: 'form' }, autocomplete: "off" do %>
+        <%= text_field_tag :query,
+        params[:query],
+        data: { search_experiences_target: 'input', action: 'keyup->search-experiences#update' },
+        class: "form-control",
+        placeholder: "Search for the venue or address"
+        %>
+      <% end %>
+      <div data-search-experiences-target="list"></div>
     </div>
  </div>
  </div>
@@ -55,7 +56,7 @@
 
 
           <div class="cards">
-      <% @experiences.each do |experience| %>
+      <% @experiences_top_3.each do |experience| %>
         <%= link_to experience_path(experience) do%>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path experience.photo.key, height: 150, width: 200, crop: :fill%>')">
             <h2><%= experience.name %></h2>

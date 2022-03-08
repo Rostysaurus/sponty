@@ -3,16 +3,11 @@ class ExperiencesController < ApplicationController
 
 def index
 
-if params[:query].present?
-   @experiences = Experience.search_by_name_and_address_and_event_type(params[:query])
- else
-   @experiences = Experience.all
-end
-
-respond_to do |format|
-  format.html # Follow regular flow of Rails
-  format.text { render partial: 'experiences/index', locals: { experiences: @experiences }, formats: [:html] }
-end
+  if params[:query].present?
+    @experiences = Experience.search_by_name_and_address_and_event_type(params[:query])
+  else
+    @experiences = Experience.all
+  end
 
   @markers = @experiences.geocoded.map do |experience|
     {
