@@ -108,3 +108,20 @@
   padding: 10px;
 
 }
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 18px;
+  margin-top: 10px;
+}
+
+.search-input {
+  position: relative;
+  i {
+    position: absolute;
+    right: -154px;
+    top: 12px;
+    font-size: 36px;
+    color: gray;
+  }
+}
