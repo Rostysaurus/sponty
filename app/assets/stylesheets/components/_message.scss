@@ -1,0 +1,71 @@
+#new_message .form-control {
+  width: 100%;
+  border-radius: 3px;
+  margin-bottom: 0 !important;
+}
+
+.message {
+  margin: 20px 0 20px 0;
+}
+
+.text-message {
+  margin: 0 !important;
+  display: inline;
+
+  width: 100%;
+  #message_content {
+    margin-top: 0 !important;
+  }
+}
+
+
+.chatroom {
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: solid .1px rgb(179, 174, 174);
+  border-radius: 8px;
+  h1 {
+    text-align: center;
+  }
+  .messages {
+    display: flex;
+    flex-direction: column;
+    .message-box {
+      margin: 6px;
+      padding: 6px;
+      border-radius: 3px;
+      &:hover {
+        i {
+          display: block;
+          color: $dark-gray;
+        }
+      }
+      p {
+        color: black;
+      }
+      strong {
+        color: $dark-gray;
+      }
+      i {
+        display: none;
+      }
+    }
+  }
+}
+
+.messages .right {
+  align-self: end;
+  background-color: $green;
+}
+
+.messages .left {
+  align-self: start;
+  background-color: $yellow;
+}

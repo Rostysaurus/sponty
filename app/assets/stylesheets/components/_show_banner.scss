@@ -61,3 +61,32 @@
   justify-content: center;
   display: flex;
 }
+
+.banner-image {
+  position: relative;
+}
+.btn-bookmark {
+  position: absolute;
+  top: 90%;
+  right: 2%;
+  color: white;
+
+}
+
+.btn-home-page {
+  position: absolute;
+  top: 90%;
+  left: 2%;
+  color: white;
+}
+
+.show-banner {
+  i {
+    color: white;
+    font-size: x-large;
+  }
+  button {
+    background: none;
+    border: none;
+  }
+}
