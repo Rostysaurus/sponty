@@ -31,10 +31,11 @@ end
 
 def create
   @experience = Experience.new(experience_params)
+  @experience.user = current_user
+  @experience.save
   chatroom = Chatroom.create(name: "#{@experience.name}-chatroom")
   @experience.chatroom = chatroom
-  @experience.save
-  redirect_to new_experience_path
+  redirect_to dashboard_path #experiences_path
 end
 
 private
@@ -44,6 +45,6 @@ def experience_users_all
 end
 
 def experience_params
-  params.require(:experience).permit(:name, :address, :busyness, :event_type)
+  params.require(:experience).permit(:name, :address, :busyness, :event_type, :photo)
 end
 end
