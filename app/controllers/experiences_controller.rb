@@ -3,11 +3,11 @@ class ExperiencesController < ApplicationController
 
 def index
 
-if params[:query].present?
-   @experiences = Experience.search_by_name_and_address_and_event_type(params[:query])
- else
-   @experiences = Experience.all
-end
+  if params[:query].present?
+    @experiences = Experience.search_by_name_and_address_and_event_type(params[:query])
+  else
+    @experiences = Experience.all
+  end
 
   @markers = @experiences.geocoded.map do |experience|
     {
@@ -35,7 +35,14 @@ def create
   @experience.save
   chatroom = Chatroom.create(name: "#{@experience.name}-chatroom")
   @experience.chatroom = chatroom
-  redirect_to dashboard_path #experiences_path
+  redirect_to experiences_path
+end
+
+def destroy
+    @experience = Experience.find(params[:id])
+    @experience.user = current_user
+    @experience.destroy
+    redirect_to experiences_path
 end
 
 private
