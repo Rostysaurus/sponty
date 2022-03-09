@@ -1,12 +1,12 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">Profile</button>
+    <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true" style= "color: black">Profile</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="stats-tab" data-bs-toggle="tab" data-bs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="false">Stats</button>
+    <button class="nav-link" id="stats-tab" data-bs-toggle="tab" data-bs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="false" style= "color: black">Stats</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Dashboard</button>
+    <button class="nav-link" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false" style= "color: black">Dashboard</button>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
@@ -62,42 +62,45 @@
 
   </div>
   <div class="tab-pane fade" id="stats" role="tabpanel" aria-labelledby="stats-tab">
-    <div class="container-stats">
-      <div class="row gy-3">
-
-          <p>You sent <%= @message_count.count  %> messages!</p>
-            <div class="col col-12 gap-3 stat-info">
+    <div class="container">
+    <div class="row">
+    <div class="col-4">
+      <div class="container-stats-tab">
+        <div class="row gy-3" style ="font-size: larger; text-align: center">
+          <p style="font-size: larger; color: #114B5F">You already sent <%= @message_count.count  %> messages!</p>
+          <div class="col col-12 gap-3 stat-info">
             <% if @message_count.count <= 10  %>
             <img src="https://img.icons8.com/bubbles/100/000000/topic.png"/>
             <% elsif @message_count.count <= 50  %>
               <img src="https://img.icons8.com/bubbles/100/000000/chat.png"/>
             <% else %>
-             <img src="https://img.icons8.com/clouds/100/000000/chat.png"/>
+            <img src="https://img.icons8.com/clouds/100/000000/chat.png"/>
             <% end %>
-            </div>
-
+          </div>
+        </div>
       </div>
-    </div>
-
-     <div class="container-stats">
-      <div class="row gy-3">
-          <p>You bookmarked <%= @experience_users.count  %> experiences!</p>
-            <div class="col col-12 gap-3 stat-info">
-            <% if @experience_users.count <= 5  %>
-              <img src="https://img.icons8.com/cute-clipart/100/000000/bookmark-ribbon.png"/>
-            <% elsif @experience_users.count <= 10  %>
-              <img src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/100/000000/external-bookmark-ux-and-ui-flatart-icons-lineal-color-flatarticons.png"/>/>
-            <% else %>
-              <img src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/100/000000/external-bookmarks-user-interface-flatart-icons-flat-flatarticons.png"/>
-            <% end %>
-            </div>
       </div>
-    </div>
-
-    <div class="container-stats">
-      <div class="row gy-3">
-          <p>You created <%= @experiences.count  %> experiences!</p>
+      <div class="col-4">
+      <div class="container-stats-tab">
+        <div class="row gy-3" style ="font-size: larger; text-align: center">
+          <p style="font-size: larger; color: #114B5F">You bookmarked <%= @experience_users.count  %> experiences!</p>
             <div class="col col-12 gap-3 stat-info">
+              <% if @experience_users.count <= 5  %>
+                <img src="https://img.icons8.com/cute-clipart/100/000000/bookmark-ribbon.png"/>
+              <% elsif @experience_users.count <= 10  %>
+                <img src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/100/000000/external-bookmark-ux-and-ui-flatart-icons-lineal-color-flatarticons.png"/>/>
+              <% else %>
+                <img src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/100/000000/external-bookmarks-user-interface-flatart-icons-flat-flatarticons.png"/>
+              <% end %>
+            </div>
+        </div>
+      </div>
+      </div>
+      <div class="col-4">
+      <div class="container-stats-tab">
+        <div class="row gy-3" style ="font-size: larger; text-align: center">
+          <p style="font-size: larger; color: #114B5F">You created <%= @experiences.count  %> experiences!</p>
+          <div class="col col-12 gap-3 stat-info">
             <% if @experiences.count <= 3  %>
             <img src="https://img.icons8.com/clouds/100/000000/new.png"/>
             <% elsif @experiences.count <= 7  %>
@@ -105,16 +108,17 @@
             <% else %>
               <img src="https://img.icons8.com/external-flaticons-flat-flat-icons/100/000000/external-new-e-commerce-flaticons-flat-flat-icons.png"/>
             <% end %>
-            </div>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
-
-
   </div>
-  <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab" style="display: flex">
-    <div class="container-stats">
+  </div>
+  <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+    <div class="container-stats-dashboard">
     <div class="row gy-3">
-      <h2>Your created experiences</h2>
+      <h2 font-family: monospace; text-align: center>Your created experiences</h2>
       <% @experiences.each do |experience| %>
         <%= link_to experience_path(experience) do%>
           <div class="col col-12 gap-3 experience-card">
@@ -124,7 +128,7 @@
           <% end %>
 
             <div class="experience-name-date">
-            <h2><%= experience.name %></h2>
+            <p><%= experience.name %></p>
             <!--<p class="text-red"><%= "Connect with guests!" %></p>-->
             </div>
           </div>
