@@ -22,5 +22,6 @@ class PagesController < ApplicationController
     @experiences = Experience.where(user: current_user)
     @message_count = Message.where(user: current_user)
     @experience_users = ExperienceUser.where(user: current_user)
+    @recent_experience = @message_count.sort_by(&:created_at).reverse.first.chatroom.experience
   end
 end
