@@ -25,10 +25,10 @@ export default class extends Controller {
     // const messager = newDiv.messagerTarget
     console.log(messager);
     if (currentUser === messager) {
-      const newData = message.replace(/(?!class="message-box )(\w+)(?=">)/, "right");
+      const newData = message.replace(/(?!class="message-box )(\w+)(?=">)/, "chat");
       message = newData
     } else {
-      const leftData = message.replace(/(?!class="message-box )(\w+)(?=">)/, "left");
+      const leftData = message.replace(/(?!class="message-box )(\w+)(?=">)/, "chat chat-left");
       message = leftData
     }
     this.messagesTarget.insertAdjacentHTML("beforeend", message)
