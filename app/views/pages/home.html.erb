@@ -34,8 +34,6 @@
 
 
 <section class="experiences">
-  <h1>Browse popular experiences</h1>
-  <p>Discover new places near you, anytime, without waiting!</p>
 </section>
 
 
@@ -55,16 +53,6 @@
 
 
 
-
-          <div class="cards">
-      <% @experiences_top_3.each do |experience| %>
-        <%= link_to experience_path(experience) do%>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path experience.photo.key, height: 150, width: 200, crop: :fill%>')">
-            <h2><%= experience.name %></h2>
-              </div>
-        <% end %>
-      <% end %>
-         </div>
 
 
 
