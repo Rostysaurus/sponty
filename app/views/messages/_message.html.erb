@@ -15,12 +15,15 @@
             <%= message.user.email %>
           </strong>
           <div class="chat-avatar">
+            <%= link_to user_path(message.user) do%>
             <a class="avatar avatar-online" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="June Lane">
                 <%= cl_image_tag message.user.photo.key %>
             </a>
+            <% end %>
           </div>
           <div class="chat-body">
             <div class="chat-content">
+              <%= link_to message.user.nickname, user_path(message.user) %>
               <p><%= message.content %></p>
               <time class="chat-time" <%= message.created_at.strftime("%a %b %e at %l:%M %p") %>>11:37:08 am</time>
             </div>

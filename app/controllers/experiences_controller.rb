@@ -1,5 +1,7 @@
 class ExperiencesController < ApplicationController
   before_action :experience_users_all, only: [:show]
+  # before_action :find_user, only: [:show]
+
 
 def index
 
@@ -46,6 +48,10 @@ def destroy
 end
 
 private
+
+def find_user
+  @user = User.find(params[:id])
+end
 
 def experience_users_all
   @experience_users = ExperienceUser.all

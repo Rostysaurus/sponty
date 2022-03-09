@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     resources :experience_users, only: [:create]
   end
   resources :experience_users, only: [:index, :destroy]
+  resources :users, only: [:show]
   end
