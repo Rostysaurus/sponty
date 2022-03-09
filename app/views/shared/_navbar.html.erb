@@ -18,12 +18,14 @@
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-          <%= link_to "Favourites", experience_users_path, class: "nav-link" %>
+            <%= link_to "All experiences", experiences_path, class: "nav-link" %>
           </li>
            <li class="nav-item" >
-             <%= link_to "Create experience", new_experience_path,  class: "nav-link" %>
+            <%= link_to "Create experience", new_experience_path,  class: "nav-link" %>
           </li>
-
+           <li class="nav-item">
+            <%= link_to "Favourites", experience_users_path, class: "nav-link" %>
+          </li>
           <li class="nav-item dropdown">
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -33,15 +35,15 @@
           </li>
         <% else %>
           <li class="nav-item" >
-             <%= link_to "Home", root_path,  class: "nav-link" %>
+            <%= link_to "Home", root_path,  class: "nav-link" %>
           </li>
-           <li class="nav-item" >
-             <%= link_to "About", root_path,  class: "nav-link" %>
+          <li class="nav-item">
+            <%= link_to "All experiences", experiences_path, class: "nav-link" %>
           </li>
-           <li class="nav-item" >
-             <%= link_to "Create experience", new_experience_path,  class: "nav-link" %>
+          <li class="nav-item" >
+            <%= link_to "Create experience", new_experience_path,  class: "nav-link" %>
           </li>
-           <li class="nav-item">
+          <li class="nav-item">
             <%= link_to "Log in", new_user_session_path,  class: "nav-link"%>
           </li>
         <% end %>
