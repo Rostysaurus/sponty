@@ -1,0 +1,15 @@
+.btn-create {
+  width: 550px;
+  height: 60px;
+  border: solid, 0.04px;
+  background-color: #F45B69;
+    &:hover {
+      background-color: #F45B69;
+      opacity: 80%;
+    }
+  border-radius: 30px;
+  outline: none;
+  font-size: 18px;
+  padding-left: 18px;
+  color: white;
+}
