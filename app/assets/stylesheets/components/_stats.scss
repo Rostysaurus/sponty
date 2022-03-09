@@ -1,9 +1,10 @@
-.container-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+.container-stats-tab {
+  padding: 2rem;
+  margin: 10px;
   display: flex;
   justify-content: center;
-  text-align: center;
-  justify-content: center;
+}
+
+.container-stats-dashboard {
+  padding: 2rem;;
 }

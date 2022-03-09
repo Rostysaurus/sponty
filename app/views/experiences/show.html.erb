@@ -6,7 +6,7 @@
     </div>
   </div>
     <div class = "icon-container">
-      <i class="fas fa-utensils" align-items: center></i>
+      <i class="fas fa-hat-chef" align-items: center></i>
         <p><%= @experience.event_type %></p>
     </div>
     <div class="btn-bookmark">
@@ -14,42 +14,40 @@
       <i class="far fa-heart"></i>
       <% end %>
     </div>
-    <div class="btn-home-page">
-      <%= link_to experiences_path do%>
-        <i class="fas fa-backspace"></i>
-      <% end %>
-    </div>
 </div>
 
-<div class="container chatroom"
-  data-controller="chatroom-subscription"
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
->
-  <h1><%= @experience.chatroom.name %></h1>
-  <h1 class="hidden"
-  data-chatroom-subscription-target="current">
-  <%= current_user.email %></h1>
-  <div class="messages"
-    data-chatroom-subscription-target="messages">
-    <% @experience.chatroom.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
-    <% end %>
-
-  </div>
-  <div class="message">
-    <%= simple_form_for [@chatroom, @message],
-      remote: true,
-      url: experience_chatroom_messages_path(@experience, @chatroom),
-      method: :post,
-      html: {data: {chatroom_subscription_target: "form"}, class: "d-flex"} do |f|
-    %>
-      <%= f.input :content,
-        label: false,
-        input_html: { autocomplete: 'off' },
-        placeholder: "Message ##{@chatroom.name}",
-        wrapper_html: {class: "text-message"}
-      %>
-      <%= f.submit "Send", class: "btn btn-primary"%>
-    <% end %>
+<div class="container d-flex justify-content-center">
+<div class="col-md-12 col-xs-12 col-md-offset-2">
+  <div class="panel" id="chat">
+    <div class="panel-body"
+      data-controller="chatroom-subscription"
+      data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+    >
+      <h1 class="hidden"
+      data-chatroom-subscription-target="current">
+      <%= current_user.email %></h1>
+      <div class="messages chat-body"
+        data-chatroom-subscription-target="messages">
+        <% @experience.chatroom.messages.each do |message| %>
+          <%= render "messages/message", message: message %>
+        <% end %>
+    </div>
+      <div class="message">
+        <%= simple_form_for [@chatroom, @message],
+          remote: true,
+          url: experience_chatroom_messages_path(@experience, @chatroom),
+          method: :post,
+          html: {data: {chatroom_subscription_target: "form"}, class: "d-flex"} do |f|
+        %>
+          <%= f.input :content,
+            label: false,
+            input_html: { autocomplete: 'off' },
+            placeholder: "Message ##{@chatroom.name}",
+            wrapper_html: {class: "text-message"}
+          %>
+          <%= f.submit "Send", class: "btn btn-red"%>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
