@@ -17,28 +17,32 @@ User.destroy_all
 puts 'Creating 4 fake users...'
   user1 = User.new(
     email: 'ipek@email.com',
-    password: '123456'
+    password: '123456',
+    nickname: "Ipek"
     )
   user1.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/users/1.png")), filename: "1")
   user1.save!
 
   user2 = User.new(
     email: 'rosty@email.com',
-    password: '123456'
+    password: '123456',
+    nickname: "Rosty"
     )
   user2.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/users/2.png")), filename: "2")
   user2.save!
 
   user3 = User.new(
     email: 'kinga@email.com',
-    password: '123456'
+    password: '123456',
+    nickname: "Kinga"
     )
   user3.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/users/3.png")), filename: "3")
   user3.save!
 
   user4 = User.new(
     email: 'viktor@email.com',
-    password: '123456'
+    password: '123456',
+    nickname: "Viktor"
     )
   user4.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/users/4.png")), filename: "4")
   user4.save!

@@ -83,6 +83,9 @@
   transition: .5s;
 }
 
+.form-control:focus {
+  position: absolute;
+}
 
 .experiences {
     width: 80%;
