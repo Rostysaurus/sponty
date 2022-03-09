@@ -33,10 +33,11 @@ export default class extends Controller {
     }
     this.messagesTarget.insertAdjacentHTML("beforeend", message)
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
-
+    this.formTarget.reset()
   }
 
   disconnect() {
+    console.log("Unsubscribed from the chatroom")
     this.channel.unsubscribe()
   }
 }
