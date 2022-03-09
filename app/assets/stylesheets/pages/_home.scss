@@ -83,15 +83,10 @@
   transition: .5s;
 }
 
-.form-control:focus {
-  position: absolute;
-}
-
 .experiences {
     width: 80%;
     margin: auto;
     text-align: center;
-    margin-top: 400px;
 }
 
 .experiences h1 {
@@ -126,4 +121,8 @@ ul {
     font-size: 36px;
     color: gray;
   }
+}
+
+img, canvas {
+  border-radius: 8px;
 }
