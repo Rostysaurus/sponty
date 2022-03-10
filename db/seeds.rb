@@ -62,25 +62,123 @@ user3.save!
 user4.save!
 
 puts 'Creating 10 experiences...'
-count2 = 0
-10.times do
-  if count2 <= 10
-    count2 += 1
-    experience = Experience.new(
-      name:    Faker::Restaurant.name,
-      address: "Rudi-Dutschke-Straße 2#{count2}, 10969 Berlin",
-      event_type: Faker::Restaurant.type,
-      busyness: "busy"
-    )
-    experience.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/#{count2}.jpeg")), filename: "#{count2}")
+murphys = Experience.new(
+  name: "Murphy's Irish Pub",
+  address: "Zimmerstraße 19, 10969 Berlin",
+  event_type: "bar",
+  busyness: "busy"
+)
+murphys.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/murphys.jpg")), filename: "murphys.jpg")
 
-    experience.user = user1
-    chatroom = Chatroom.create(name: "#{experience.name}-chatroom")
-    experience.chatroom = chatroom
-    experience.save!
-    count2 += 1
-  elsif count2 > 10
-    count2 = 0
-  end
-end
+murphys.user = user1
+chatroom = Chatroom.create(name: "#{murphys.name}-chatroom")
+murphys.chatroom = chatroom
+murphys.save!
+
+brewdog = Experience.new(
+  name: "BrewDog",
+  address: "Ackerstraße 29, 10115 Berlin",
+  event_type: "bar",
+  busyness: "semi-busy"
+)
+brewdog.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/brewdog.jpg")), filename: "brewdog.jpg")
+
+brewdog.user = user1
+chatroom = Chatroom.create(name: "#{brewdog.name}-chatroom")
+brewdog.chatroom = chatroom
+brewdog.save!
+
+aromas = Experience.new(
+  name: "Aromas Café",
+  address: "Marienburger Str. 26 A, 10405 Berlin",
+  event_type: "cafe",
+)
+aromas.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/aromas.jpeg")), filename: "aromas.jpeg")
+
+aromas.user = user1
+chatroom = Chatroom.create(name: "#{aromas.name}-chatroom")
+aromas.chatroom = chatroom
+aromas.save!
+
+kuriya = Experience.new(
+  name: "Ki Kuriya",
+  address: "Hufelandstraße 14, 10407 Berlin",
+  event_type: "restaurant"
+)
+kuriya.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/kuriya.jpg")), filename: "kuriya.jpg")
+
+kuriya.user = user1
+chatroom = Chatroom.create(name: "#{kuriya.name}-chatroom")
+kuriya.chatroom = chatroom
+kuriya.save!
+
+frannz = Experience.new(
+  name: "FRANNZ Club",
+  address: "ZSchönhauser Allee 36, 10435 Berlin",
+  event_type: "club"
+)
+frannz.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/frannz.jpg")), filename: "frannz.jpg")
+
+frannz.user = user1
+chatroom = Chatroom.create(name: "#{frannz.name}-chatroom")
+frannz.chatroom = chatroom
+frannz.save!
+
+kitkat = Experience.new(
+  name: "KitKatClub",
+  address: "Köpenicker Straße 76, Brückenstraße 1, 10179 Berlin",
+  event_type: "club"
+)
+kitkat.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/kitkat.jpg")), filename: "kitkat.jpg")
+
+kitkat.user = user1
+chatroom = Chatroom.create(name: "#{kitkat.name}-chatroom")
+kitkat.chatroom = chatroom
+kitkat.save!
+
+imbiss = Experience.new(
+  name: "W - Der Imbiss",
+  address: "Kastanienallee 49, 10119 Berlin",
+  event_type: "restaurant"
+  )
+imbiss.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/imbiss.jpg")), filename: "imbiss.jpg")
+imbiss.user = user1
+chatroom = Chatroom.create(name: "#{imbiss.name}-chatroom")
+imbiss.chatroom = chatroom
+imbiss.save!
+
+dunckerclub = Experience.new(
+  name: "Dunckerclub",
+  address: " Dunckerstraße 64, 10439 Berlin",
+  event_type: "bar"
+)
+dunckerclub.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/duncker.jpg")), filename: "duncker.jpg")
+dunckerclub.user = user1
+chatroom = Chatroom.create(name: "#{dunckerclub.name}-chatroom")
+dunckerclub.chatroom = chatroom
+dunckerclub.save!
+
+kaminbar= Experience.new(
+  name: "Kaminbar",
+  address: "Oderberger Str. 57, 10435 Berlin",
+  event_type: "bar"
+)
+kaminbar.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/kaminbar.jpg")), filename: "kaminbar.jpg")
+kaminbar.user = user1
+chatroom = Chatroom.create(name: "#{kaminbar.name}-chatroom")
+kaminbar.chatroom = chatroom
+kaminbar.save!
+
+bonanza = Experience.new(
+  name: "Bonanza Coffee Heroes",
+  address: "Oderberger Str. 35, 10435 Berlin",
+  event_type: "cafe",
+  )
+bonanza.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/bonanza.jpg")), filename: "bonanza.jpg")
+bonanza.user = user1
+chatroom = Chatroom.create(name: "#{bonanza.name}-chatroom")
+bonanza.chatroom = chatroom
+bonanza.save!
+
+
 puts 'Finished creating experiences!'
