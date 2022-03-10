@@ -1,0 +1,122 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true" style= "color: black">Profile</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="stats-tab" data-bs-toggle="tab" data-bs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="false" style= "color: black">Stats</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false" style= "color: black">Dashboard</button>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active justify-content-center" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-xl-6 col-md-12">
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-white">
+                                <div class="m-b-25" class="img-radius"><%= cl_image_tag @user.photo.key, class: "avatar-user" %></div>
+                                <h6 class="f-w-600"><%= @user.nickname %></h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                                <h6 class="m-b-20 p-b-5 b-b-default f-w-500">Information</h6>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-400">Email</p>
+                                        <h6 class="text-muted f-w-300"><%= @user.email%></h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-400">Location</p>
+                                        <h6 class="text-muted f-w-300"><%= @user.location%></h6>
+                                    </div>
+                                </div>
+                                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-500">Experiences</h6>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-400">Recent</p>
+                                        <h6 class="text-muted f-w-300"><%= link_to @recent_experience.name, experience_path(@recent_experience) %></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+  </div>
+  <div class="tab-pane fade" id="stats" role="tabpanel" aria-labelledby="stats-tab">
+    <div class="container">
+    <div class="row">
+    <div class="col-6">
+      <div class="container-stats-tab">
+        <div class="row gy-3" style ="font-size: larger; text-align: center">
+          <p style="font-size: larger; color: #114B5F"><%= @user.nickname %> has already sent <%= @message_count.count  %> messages!</p>
+          <div class="col col-12 gap-3 stat-info">
+            <% if @message_count.count <= 10  %>
+            <img src="https://img.icons8.com/bubbles/100/000000/topic.png"/>
+            <% elsif @message_count.count <= 50  %>
+              <img src="https://img.icons8.com/bubbles/100/000000/chat.png"/>
+            <% else %>
+            <img src="https://img.icons8.com/clouds/100/000000/chat.png"/>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="col-6">
+      <div class="container-stats-tab">
+        <div class="row gy-3" style ="font-size: larger; text-align: center">
+          <p style="font-size: larger; color: #114B5F"><%= @user.nickname %> created <%= @user.experiences.count  %> experiences!</p>
+          <div class="col col-12 gap-3 stat-info">
+            <% if @user.experiences.count <= 3  %>
+            <img src="https://img.icons8.com/clouds/100/000000/new.png"/>
+            <% elsif @user.experiences.count <= 7  %>
+              <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/100/000000/external-new-computer-programming-icons-flaticons-lineal-color-flat-icons.png"/>
+            <% else %>
+              <img src="https://img.icons8.com/external-flaticons-flat-flat-icons/100/000000/external-new-e-commerce-flaticons-flat-flat-icons.png"/>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+    <div class="container-stats-dashboard">
+    <div class="row gy-3">
+      <h2 font-family: monospace; text-align: center><%= @user.nickname %>'s created experiences</h2>
+      <% @user.experiences.each do |experience| %>
+        <%= link_to experience_path(experience) do%>
+          <div class="col col-12 gap-3 experience-card">
+          <% if experience.photo.attached? %>
+            <%= cl_image_tag experience.photo.key, height: 150, width: 200, crop: :fill%>
+
+          <% end %>
+
+            <div class="experience-name-date">
+            <p><%= experience.name %></p>
+            <!--<p class="text-red"><%= "Connect with guests!" %></p>-->
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<%= render "pages/footer" %>
