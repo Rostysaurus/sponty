@@ -15,12 +15,12 @@ class ExperienceUsersController < ApplicationController
     @experience_user.user = current_user
     @experience_user.experience = @experience
     @experience_user.save
-    redirect_to experience_users_path
+    redirect_to experience_path(@experience)
   end
 
   def destroy
     @experience_user.destroy
-    redirect_to experience_users_path
+    redirect_to experience_path(@experience_user.experience)
   end
 
   private
