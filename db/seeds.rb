@@ -88,17 +88,17 @@ chatroom = Chatroom.create(name: "#{brewdog.name}-chatroom")
 brewdog.chatroom = chatroom
 brewdog.save!
 
-aromas = Experience.new(
-  name: "Aromas Café",
-  address: "Marienburger Str. 26 A, 10405 Berlin",
+hallesches = Experience.new(
+  name: "Hallesches Haus",
+  address: " Tempelhofer Ufer 1, 10961 Berlin",
   event_type: "cafe",
 )
-aromas.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/aromas.jpeg")), filename: "aromas.jpeg")
+hallesches.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/experiences/hallesches.jpg")), filename: "hallesches.jpg")
 
-aromas.user = user1
-chatroom = Chatroom.create(name: "#{aromas.name}-chatroom")
-aromas.chatroom = chatroom
-aromas.save!
+hallesches.user = user1
+chatroom = Chatroom.create(name: "#{hallesches.name}-chatroom")
+hallesches.chatroom = chatroom
+hallesches.save!
 
 kuriya = Experience.new(
   name: "Ki Kuriya",
