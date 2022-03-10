@@ -14,7 +14,7 @@
         <% if @favorite %>
           <%= link_to experience_user_path(@favorite), method: :delete do %>
             <div class="d-flex align-items-center">
-              <div><i id="icon" class="fas fa-heart"></i></div>
+              <div><i id="icon" class="fas fa-heart" style="color:red"></i></div>
             </div>
           <% end %>
         <% else %>
