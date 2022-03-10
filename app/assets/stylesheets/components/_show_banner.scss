@@ -34,19 +34,25 @@
 }
 
 .icon-container {
-  height: 60px;
-  width: 60px;
-  background-color: rgb(255, 255, 255);
-  opacity: .7;
   position: absolute;
   left: 24px;
   top: 24px;
+  border-radius: 1rem;
+  background: #62a8ea87;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 0;
+  width: 6rem;
+  height: 6rem;
+
+  p, i {
+    font-size: 1.5rem;
+    color: white;
+  }
 }
 
-.icon-container p {
-  font-size: 12px;
-  font-family: monospace;
-}
+
 
 .show-banner-content{
   display: flex;
@@ -83,7 +89,7 @@
 .show-banner {
   i {
     color: white;
-    font-size: x-large;
+    font-size: 2rem;
   }
   button {
     background: none;
