@@ -9,15 +9,27 @@
       <i class="fas fa-hat-chef" align-items: center></i>
         <p><%= @experience.event_type %></p>
     </div>
-    <div class="btn-bookmark">
-      <%= button_to experience_experience_users_path(@experience) do%>
-      <i class="far fa-heart"></i>
+    <div class="btn-bookmark" data-controller="disable-button"
+                              data-action="click->disable-button#disableheart">
+        <% if @favorite %>
+          <%= link_to experience_user_path(@favorite), method: :delete do %>
+            <div class="d-flex align-items-center">
+              <div><i id="icon" class="fas fa-heart"></i></div>
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to experience_experience_users_path(@experience),class: "", method: :post do %>
+            <div class="d-flex align-items-center">
+              <div><i id="icon" class="far fa-heart"></i></div>
+            </div>
+          <% end %>
       <% end %>
+
     </div>
 </div>
 
 <div class="container d-flex justify-content-center">
-<div class="col-md-12 col-xs-12 col-md-offset-2">
+<div class="col-md-8 col-xs-12 col-md-offset-2">
   <div class="panel" id="chat">
     <div class="panel-body"
       data-controller="chatroom-subscription"
@@ -51,3 +63,5 @@
     </div>
   </div>
 </div>
+</div>
+<%= render "pages/footer" %>
