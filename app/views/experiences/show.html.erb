@@ -6,16 +6,16 @@
     </div>
   </div>
     <div class = "icon-container">
-    <% if @experience.event_type == "Bar" %>
+    <% if @experience.event_type == "bar" %>
         <i class="fas fa-glass-martini-alt"></i>
-      <% elsif @experience.event_type == "Restaurant" %>
+      <% elsif @experience.event_type == "restaurant" %>
         <i class="fas fa-utensils"></i>
-      <% elsif @experience.event_type == "Cafe" %>
-        <i class="fas fa-coffee"></i>
-      <% elsif @experience.event_type == "Club" %>
+      <% elsif @experience.event_type == "cafe" %>
+        <i class="fa fa-coffee"></i>
+      <% elsif @experience.event_type == "club" %>
         <i class="fas fa-volume-up"></i>
     <% end %>
-        <p><%= @experience.event_type %></p>
+        <p style="font-size: smaller"><%= @experience.event_type %></p>
     </div>
     <div class="btn-bookmark" data-controller="disable-button"
                               data-action="click->disable-button#disableheart">
