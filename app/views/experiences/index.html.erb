@@ -1,40 +1,39 @@
 <div class="container">
   <div class="row justify-content-center gy-3">
-    <div class="search-bar">
-
-<%= form_tag experiences_path, autocomplete: "off", method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Search for a venue or an address"
-   %>
-<% end %>
-</div>
-
-
-<div class="index-left-map-right">
-  <div class="container experiences">
-    <div class="row gy-3">
-      <% @experiences.each do |experience| %>
-        <%= link_to experience_path(experience) do%>
-          <div class="col col-12 gap-3 experience-card">
-           <% if experience.photo.attached? %>
-            <%= cl_image_tag experience.photo.key, height: 150, width: 200, crop: :fill%>
-            <% end%>
-            <div class="experience-name-and-address">
-            <h2><%= experience.name %></h2>
-            <p><%= experience.event_type %></p>
-            <p class="text-red"><%= "Connect with guests!" %></p>
-            </div>
-          </div>
-        <% end %>
+      <div class="search-bar">
+        <%= form_tag experiences_path, autocomplete: "off", method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search for a venue or an address"%>
       <% end %>
     </div>
-  </div>
 
-  <div class="map-right" style="width: 100%"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+
+    <div class="index-left-map-right">
+      <div class="container experiences">
+        <div class="row gy-3">
+          <% @experiences.each do |experience| %>
+            <%= link_to experience_path(experience) do%>
+              <div class="col col-12 gap-3 experience-card">
+              <% if experience.photo.attached? %>
+                <%= cl_image_tag experience.photo.key, height: 150, width: 200, crop: :fill%>
+                <% end%>
+                <div class="experience-name-and-address">
+                <h2><%= experience.name %></h2>
+                <p><%= experience.event_type %></p>
+                <p class="text-red"><%= "Connect with guests!" %></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <div class="map-right" style="width: 100%"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+    </div>
+</div>
 </div>

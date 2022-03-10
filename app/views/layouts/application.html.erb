@@ -16,7 +16,9 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
-    <%= yield %>
+    <div class="footer-push">
+      <%= yield %>
+    </div>
+    <%= render 'pages/footer'%>
   </body>
 </html>
