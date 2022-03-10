@@ -23,6 +23,7 @@ def show
   @experience = Experience.find(params[:id])
   @chatroom = @experience.chatroom
   @message = Message.new
+  @favorite = ExperienceUser.find_by(user: current_user, experience: @experience)
 end
 
 def new
