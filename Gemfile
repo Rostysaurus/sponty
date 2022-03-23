@@ -34,6 +34,10 @@ gem "geocoder"
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
+# Facebook login
+gem 'omniauth-facebook'
+gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
