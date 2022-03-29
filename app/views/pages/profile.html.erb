@@ -18,7 +18,14 @@
                     <div class="row m-l-0 m-r-0">
                         <div class="col-sm-4 bg-c-lite-green user-profile">
                             <div class="card-block text-center text-white">
-                                <div class="m-b-25" class="img-radius"><%= cl_image_tag current_user.photo.key, class: "avatar-user" %></div>
+                                <div class="m-b-25" class="img-radius">
+                                <% if current_user.facebook_picture_url %>
+                                <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+                                <%= image_tag avatar_url, class: "avatar-user" %>
+                                <% else %>
+                                <%= cl_image_tag current_user.photo.key, class: "avatar-user" %></div>
+
+                                <% end %>
                                 <h6 class="f-w-600"><%= current_user.nickname %></h6>
                             </div>
                         </div>
