@@ -25,6 +25,8 @@ gem 'redis', '~> 4.0'
 gem 'faker'
 gem 'cloudinary', '~> 1.16.0'
 gem "geocoder"
+gem 'figaro'
+
 
 
 # Use Active Storage variant
@@ -34,6 +36,11 @@ gem "geocoder"
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
+# Facebook login
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'

@@ -33,11 +33,15 @@
   </head>
 
   <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v13.0&appId=1030307771224952&autoLogAppEvents=1" nonce="hv1mAb7f">
+    </script>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <div class="footer-push">
       <%= yield %>
     </div>
     <%= render 'pages/footer'%>
+
   </body>
 </html>
