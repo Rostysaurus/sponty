@@ -23,9 +23,9 @@
                                 <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
                                 <%= image_tag avatar_url, class: "avatar-user" %>
                                 <% else %>
-                                <%= cl_image_tag current_user.photo.key, class: "avatar-user" %></div>
-
+                                <%= cl_image_tag current_user.photo.key, class: "avatar-user" %>
                                 <% end %>
+                                </div>
                                 <h6 class="f-w-600"><%= current_user.nickname %></h6>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
   <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
     <div class="container-stats-dashboard">
     <div class="row gy-3">
-      <h2 font-family: monospace; text-align: center>Your created experiences</h2>
+      <h2 font-family: monospace; text-align: center>Experiences you've created</h2>
       <% @experiences.each do |experience| %>
         <%= link_to experience_path(experience) do%>
           <div class="col col-12 gap-3 experience-card">

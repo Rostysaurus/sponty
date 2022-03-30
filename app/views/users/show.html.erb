@@ -19,7 +19,14 @@
                     <div class="row m-l-0 m-r-0">
                         <div class="col-sm-4 bg-c-lite-green user-profile">
                             <div class="card-block text-center text-white">
-                                <div class="m-b-25" class="img-radius"><%= cl_image_tag @user.photo.key, class: "avatar-user" %></div>
+                                <div class="m-b-25" class="img-radius">
+                                  <% if current_user.facebook_picture_url %>
+                                  <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+                                  <%= image_tag avatar_url, class: "avatar-user" %>
+                                  <% else %>
+                                  <%= cl_image_tag current_user.photo.key, class: "avatar-user" %>
+                                  <% end %>
+                                </div>
                                 <h6 class="f-w-600"><%= @user.nickname %></h6>
                             </div>
                         </div>
@@ -98,15 +105,14 @@
   <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
     <div class="container-stats-dashboard">
     <div class="row gy-3">
-      <h2 font-family: monospace; text-align: center><%= @user.nickname %>'s created experiences</h2>
+    <% if @user.experiences %>
+      <h2 font-family: monospace; text-align: center>Experiences you've created</h2>
       <% @user.experiences.each do |experience| %>
         <%= link_to experience_path(experience) do%>
           <div class="col col-12 gap-3 experience-card">
           <% if experience.photo.attached? %>
             <%= cl_image_tag experience.photo.key, height: 150, width: 200, crop: :fill%>
-
           <% end %>
-
             <div class="experience-name-date">
             <p><%= experience.name %></p>
             <!--<p class="text-red"><%= "Connect with guests!" %></p>-->
@@ -114,9 +120,7 @@
           </div>
         <% end %>
       <% end %>
+    <% end %>
     </div>
   </div>
 </div>
-
-
-<%= render "pages/footer" %>
