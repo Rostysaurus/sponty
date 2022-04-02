@@ -1,0 +1,13 @@
+murphys:
+  name: "Murphy's Irish Pub"
+  address: "Zimmerstraße 19, 10969 Berlin"
+  event_type: "bar"
+  busyness: "busy"
+  user_id: 2
+
+brewdog:
+  name: "BrewDog"
+  address: "Ackerstraße 29, 10115 Berlin"
+  event_type: "bar"
+  busyness: "semi-busy"
+  user_id: 2
