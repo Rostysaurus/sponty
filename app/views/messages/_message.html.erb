@@ -17,9 +17,16 @@
           <div class="chat-avatar">
             <%= link_to user_path(message.user) do%>
             <a class="avatar avatar-online" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="June Lane">
-                <%= cl_image_tag message.user.photo.key %>
-            </a>
-            <% end %>
+
+
+                <% if current_user.facebook_picture_url %>
+                <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+                <%= image_tag avatar_url%>
+                <% else %>
+                <%= cl_image_tag current_user.photo.key %>
+                <% end %>
+                </a>
+                <% end %>
           </div>
           <div class="chat-body">
             <div class="chat-content">
