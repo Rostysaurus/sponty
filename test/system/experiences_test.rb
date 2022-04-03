@@ -18,6 +18,12 @@ class ExperiencesTest < ApplicationSystemTestCase
     select "Restaurant", from: "experience_event_type"
     # fill_in "event_type", with: "restaurant"
     fill_in "Search", with: "Krefelder Str. 6, 10555 Berlin"
+    # save_and_open_screenshot
+
+    # page.should have_selector('ul.ui-autocomplete li.ui-menu-item a')
+    # page.execute_script %Q{ $('#{selector}').trigger('mouseenter').click() }
+
+    # select "mapboxgl-ctrl-geocoder--suggestion-title", from: "mapboxgl-ctrl-geocoder--input"
 
     # save_and_open_screenshot
 
@@ -27,6 +33,6 @@ class ExperiencesTest < ApplicationSystemTestCase
     # Should be redirected to Home with new product
     assert_equal experiences_path, page.current_path
     # save_and_open_screenshot
-    # assert_selector "h2", text: "Walhalla"
+
   end
 end
